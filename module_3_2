@@ -1,0 +1,16 @@
+def send_email(Message, Recipient, Sender='university.help@gmail.com'):
+    if not (Recipient.endswith((".com", ".ru", ".net")) and '@' in Recipient
+            and Sender.endswith((".com", ".ru", ".net")) and '@' in Sender):
+        print("Невозможно отправить письмо с адреса", Sender, "на адрес", Recipient)
+    elif Sender == Recipient:
+        print("Невозможно отправить сообщение самому себе")
+    elif Sender == ('university.help@gmail.com'):
+        print("Сообщение успешно отправленно с адресса", Sender, "на адресс", Recipient)
+    else:
+        print("Нестандартынй отправитель! Письмо отправленно с адресса", Sender, "на адресс", Recipient)
+
+
+send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
+send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', Sender='urban.info@gmail.com')
+send_email('Пожалуйста, исправьте задание', 'urban.teacher@mail.uk', Sender='urban.student@mail.ru')
+send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', Sender='urban.teacher@mail.ru')
